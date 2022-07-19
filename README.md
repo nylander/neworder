@@ -1,6 +1,6 @@
 # Permute the order of ordered character states
 
-![Comparison between the user supplied character-state ordering (red arrows) and permuted orderings.](img/cyn.morphology.pdf)
+![Comparison between the user supplied character-state ordering (red arrows) and permuted orderings.](img/cyn.png)
 
 
 ## SCRIPT NAME
