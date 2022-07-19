@@ -20,7 +20,6 @@ Documentation for `neworder.pl` version 0.1.0
 Script for creating a *NUMBER* of random permutations of character
 orderings in Nexus file INFILE. If option *--paup* is used, the script
 creates the files, and tries to run them using [paup](http://paup.phylosolutions.com/).
-When the option *--nopaup* is used, the script doesn't run paup (obviously).
 
 Note that *Ctype* needs to be present in the Paup block and written on a
 single line. The script reads only a single Paup block (the first), and
