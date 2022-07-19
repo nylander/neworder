@@ -5,45 +5,44 @@
 
 ## SCRIPT NAME
 
-    neworder.pl
+[`neworder.pl`](src/neworder.pl)
 
 ## VERSION
 
-    Documentation for neworder.pl version 0.1.0
+Documentation for `neworder.pl` version 0.1.0
 
 ## SYNOPSIS
 
-    neworder.pl --reps=*NUMBER* --[no]paup --write-R --outfile=OUTFILE
-    --[no]VERBOSE INFILE
+    $ neworder.pl [options] INFILE
 
 ## DESCRIPTION
 
-    Script for creating a *NUMBER* of random permutations of character
-    orderings in Nexus file INFILE. If option *--paup* is used, the script
-    creates the files, and tries to run them using paup. When the option
-    *--nopaup* is used, the script doesn't run paup (obviously).
+Script for creating a *NUMBER* of random permutations of character
+orderings in Nexus file INFILE. If option *--paup* is used, the script
+creates the files, and tries to run them using paup. When the option
+*--nopaup* is used, the script doesn't run paup (obviously).
 
-    Note that *Ctype* needs to be present in the Paup block and written on a
-    single line. The script reads only a single Paup block (the first), and
-    any specific search arguments should be specified in the block.
+Note that *Ctype* needs to be present in the Paup block and written on a
+single line. The script reads only a single Paup block (the first), and
+any specific search arguments should be specified in the block.
 
-    Example of readable Nexus format:
+Example of readable Nexus format:
 
-        #NEXUS
-        Begin data;
-        Dimensions ntax=3 nchar=4;
-        Format missing=? gap=- datatype=DNA;
-        Matrix
-        Apa 00(01)0
-        Bpa 1111
-        Cpa 2212
-        ;
-        End;
-        Begin Paup;
-        Outgroup Apa;
-        Ctype ord : 1 2 4;
-        Hsearch addseq=rand reps=10;
-        End;
+    #NEXUS
+    Begin data;
+    Dimensions ntax=3 nchar=4;
+    Format missing=? gap=- datatype=DNA;
+    Matrix
+    Apa 00(01)0
+    Bpa 1111
+    Cpa 2212
+    ;
+    End;
+    Begin Paup;
+    Outgroup Apa;
+    Ctype ord : 1 2 4;
+    Hsearch addseq=rand reps=10;
+    End;
 
 ## OPTIONS
 
@@ -78,18 +77,18 @@
 
 ## USAGE
 
-    neworder.pl --reps=*NUMBER* --[no]paup --write-R --outfile=OUTFILE
-    --[no]VERBOSE INFILE
+    $ neworder.pl --reps=*NUMBER* --[no]paup --write-R --outfile=OUTFILE --[no]VERBOSE INFILE
 
 ## AUTHOR
 
-    Written by Johan A. A. Nylander
+Written by Johan A. A. Nylander
 
 ## DEPENDENCIES
 
-    Perl.
-    Optional: PAUP* (by D. L. Swofford) needs to be installed (as 'paup') in
-    the PATH.
+Perl.
+
+Optional: PAUP\* (by D. L. Swofford). Needs to be installed (as 'paup') in
+the PATH.
 
 ## LICENSE AND COPYRIGHT
 
