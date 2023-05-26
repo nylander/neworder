@@ -91,7 +91,7 @@ Needs to be installed as 'paup' in the PATH.
 
 ## LICENSE AND COPYRIGHT
 
-Copyright (c) 2007-2022 Johan Nylander
+Copyright (c) 2007-2023 Johan Nylander
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
