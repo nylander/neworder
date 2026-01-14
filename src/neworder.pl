@@ -253,15 +253,16 @@ print STDERR "\ndone\n" if $VERBOSE;
 # end of main
 
 
-#===  FUNCTION  ================================================================
-#         NAME:  extended_paup_block
-#      VERSION:  04/17/2007 10:56:48 PM CEST
-#  DESCRIPTION:  Paup block
-#   PARAMETERS:  $outfile, name of outfile
-#      RETURNS:  @paup_block
-#         TODO:  ????
-#===============================================================================
 sub extended_paup_block {
+
+    #===  FUNCTION  ================================================================
+    #         NAME:  extended_paup_block
+    #      VERSION:  04/17/2007 10:56:48 PM CEST
+    #  DESCRIPTION:  Paup block
+    #   PARAMETERS:  $outfile, name of outfile
+    #      RETURNS:  @paup_block
+    #         TODO:  ????
+    #===============================================================================
 
     my ($outfile) = @_;
 
@@ -274,18 +275,19 @@ sub extended_paup_block {
 
     return @paup_block;
 
-} # end of extended_paup_block
+}
 
 
-#===  FUNCTION  ================================================================
-#         NAME:  find_paup
-#      VERSION:  04/11/2007 18:48:00 PM CET
-#  DESCRIPTION:  Searches the PATH for the PAUP binary
-#   PARAMETERS:  $paup_bin
-#      RETURNS:  path to paup binary ($paup) or 0 if not found
-#         TODO:  ????
-#===============================================================================
 sub find_paup {
+
+    #===  FUNCTION  ================================================================
+    #         NAME:  find_paup
+    #      VERSION:  04/11/2007 18:48:00 PM CET
+    #  DESCRIPTION:  Searches the PATH for the PAUP binary
+    #   PARAMETERS:  $paup_bin
+    #      RETURNS:  path to paup binary ($paup) or 0 if not found
+    #         TODO:  ????
+    #===============================================================================
 
     my ($paup_bin) = @_;
     my $paup = '';
@@ -304,18 +306,19 @@ sub find_paup {
 
     return($paup);
 
-} # end of find_paup
+}
 
 
-#===  FUNCTION  ================================================================
-#         NAME:  fisher_yates_shuffle
-#      VERSION:  04/12/2007 11:06:02 AM CEST
-#  DESCRIPTION:  Shuffles an array. Taken from perldoc, with modifications.
-#   PARAMATERS:  \@array, ref to array
-#      RETURNS:  Void (shuffles array in place
-#         TODO:  ????
-#===============================================================================
 sub fisher_yates_shuffle {
+
+    #===  FUNCTION  ================================================================
+    #         NAME:  fisher_yates_shuffle
+    #      VERSION:  04/12/2007 11:06:02 AM CEST
+    #  DESCRIPTION:  Shuffles an array. Taken from perldoc, with modifications.
+    #   PARAMATERS:  \@array, ref to array
+    #      RETURNS:  Void (shuffles array in place
+    #         TODO:  ????
+    #===============================================================================
 
     my $array = shift;
     my $i;
@@ -326,20 +329,21 @@ sub fisher_yates_shuffle {
         @$array[$i,$j] = @$array[$j,$i];
     }
 
-} # end of fisher_yates_shuffle
+}
 
 
-#===  FUNCTION  ================================================================
-#         NAME:  get_new_char_state
-#      VERSION:  04/16/2007 11:10:01 PM CEST
-#  DESCRIPTION:  finds the new character state from the global HoH based on
-#                position and old state. Also handles question marks, gaps and
-#                multi-state characters
-#   PARAMATERS:  $i, position in sequence, and $state, character state for position $i
-#      RETURNS:  $new, new character state
-#         TODO:  ????
-#===============================================================================
 sub get_new_char_state {
+
+    #===  FUNCTION  ================================================================
+    #         NAME:  get_new_char_state
+    #      VERSION:  04/16/2007 11:10:01 PM CEST
+    #  DESCRIPTION:  finds the new character state from the global HoH based on
+    #                position and old state. Also handles question marks, gaps and
+    #                multi-state characters
+    #   PARAMATERS:  $i, position in sequence, and $state, character state for position $i
+    #      RETURNS:  $new, new character state
+    #         TODO:  ????
+    #===============================================================================
 
     my (@args) = @_;
     my $new    = q{};
@@ -368,18 +372,19 @@ sub get_new_char_state {
 
     return ($new);
 
-} # end of get_new_char_state
+}
 
 
-#===  FUNCTION  ================================================================
-#         NAME:  get_seq
-#      VERSION:  04/12/2007 11:06:08 AM CEST
-#  DESCRIPTION:  Read sequence allowing for multitate characters
-#   PARAMATERS:  $seq, string with sequence
-#      RETURNS:  @seq, array with characters
-#         TODO:  ????
-#===============================================================================
 sub get_seq {
+
+    #===  FUNCTION  ================================================================
+    #         NAME:  get_seq
+    #      VERSION:  04/12/2007 11:06:08 AM CEST
+    #  DESCRIPTION:  Read sequence allowing for multitate characters
+    #   PARAMATERS:  $seq, string with sequence
+    #      RETURNS:  @seq, array with characters
+    #         TODO:  ????
+    #===============================================================================
 
     my (@l) = split //, shift(@_);
     my $m = "";
@@ -426,18 +431,19 @@ sub get_seq {
 
     return @s;
 
-} # end of get_seq
+}
 
 
-#===  FUNCTION  ================================================================
-#         NAME:  get_unique
-#      VERSION:  04/15/2007 08:49:15 PM CEST
-#  DESCRIPTION:  find the unique values in an array. From Perl Cook Book.
-#   PARAMATERS:  @array
-#      RETURNS:  @array
-#         TODO:  ????
-#===============================================================================
 sub get_unique {
+
+    #===  FUNCTION  ================================================================
+    #         NAME:  get_unique
+    #      VERSION:  04/15/2007 08:49:15 PM CEST
+    #  DESCRIPTION:  find the unique values in an array. From Perl Cook Book.
+    #   PARAMATERS:  @array
+    #      RETURNS:  @array
+    #         TODO:  ????
+    #===============================================================================
 
     my (@list) = @_;
     my @uniq   = ();
@@ -461,19 +467,19 @@ sub get_unique {
 
     return (@uniq);
 
-} # end of get_unique
+}
 
 
-#===  FUNCTION  ================================================================
-#         NAME:  is_char_in_ctype
-#      VERSION:  04/16/2007 14:40:15 PM CEST
-#  DESCRIPTION:  Searches global array @ctype_numbers for presence of $i.
-#   PARAMATERS:  $i, character number
-#      RETURNS:  1 if found, else 0
-#         TODO:  ????
-#===============================================================================
 sub is_char_in_ctype {
 
+    #===  FUNCTION  ================================================================
+    #         NAME:  is_char_in_ctype
+    #      VERSION:  04/16/2007 14:40:15 PM CEST
+    #  DESCRIPTION:  Searches global array @ctype_numbers for presence of $i.
+    #   PARAMATERS:  $i, character number
+    #      RETURNS:  1 if found, else 0
+    #         TODO:  ????
+    #===============================================================================
     my $i  = shift;
     my $is = 0;
 
@@ -485,20 +491,21 @@ sub is_char_in_ctype {
 
     return $is;
 
-} # end of is_char_in_ctype
+}
 
 
-#===  FUNCTION  ================================================================
-#         NAME:  read_ctype_numbers
-#      VERSION:  04/06/2007 01:45:18 PM CEST
-#  DESCRIPTION:  read ctype numbers from file.
-#                Assumes the Ctype command on a single line!
-#                Does not handle ranges (e.g. '1-10')!
-#   PARAMATERS:  \@paup_block, array ref to paup block
-#      RETURNS:  @ctype_numbers
-#         TODO:  Handle ranges
-#===============================================================================
 sub read_ctype_numbers {
+
+    #===  FUNCTION  ================================================================
+    #         NAME:  read_ctype_numbers
+    #      VERSION:  04/06/2007 01:45:18 PM CEST
+    #  DESCRIPTION:  read ctype numbers from file.
+    #                Assumes the Ctype command on a single line!
+    #                Does not handle ranges (e.g. '1-10')!
+    #   PARAMATERS:  \@paup_block, array ref to paup block
+    #      RETURNS:  @ctype_numbers
+    #         TODO:  Handle ranges
+    #===============================================================================
 
     my ($array_ref)     = @_;
     my @ctype_numbers = ();
@@ -520,18 +527,19 @@ sub read_ctype_numbers {
 
     return(@ctype_numbers);
 
-} # end of read_ctype_numbers
+}
 
 
-#===  FUNCTION  ================================================================
-#         NAME:  read_header
-#      VERSION:  04/12/2007 11:56:22 PM CEST
-#  DESCRIPTION:  read file content and get the Begin data block header
-#   PARAMATERS:  \@file_content, reference to an array with file content
-#      RETURNS:  @header, array
-#         TODO:  ????
-#===============================================================================
 sub read_header {
+
+    #===  FUNCTION  ================================================================
+    #         NAME:  read_header
+    #      VERSION:  04/12/2007 11:56:22 PM CEST
+    #  DESCRIPTION:  read file content and get the Begin data block header
+    #   PARAMATERS:  \@file_content, reference to an array with file content
+    #      RETURNS:  @header, array
+    #         TODO:  ????
+    #===============================================================================
 
     my ($array_ref)  = @_;
     my %hash         = ();
@@ -552,20 +560,21 @@ sub read_header {
 
     return @header;
 
-} # end of read_header
+}
 
 
-#===  FUNCTION  ================================================================
-#         NAME:  read_matrix
-#      VERSION:  tis 19 jul 2022 11:51:44 
-#  DESCRIPTION:  Read file content and get the matrix.
-#                Does not handle comments. The word 'matrix' should not appear
-#                anywhere else than intended.
-#   PARAMATERS:  \@file_content, reference to an array with file content
-#      RETURNS:  \%hash, reference to anonymoushash with key=$name, value=@characters
-#         TODO:  ????
-#===============================================================================
 sub read_matrix {
+
+    #===  FUNCTION  ================================================================
+    #         NAME:  read_matrix
+    #      VERSION:  tis 19 jul 2022 11:51:44 
+    #  DESCRIPTION:  Read file content and get the matrix.
+    #                Does not handle comments. The word 'matrix' should not appear
+    #                anywhere else than intended.
+    #   PARAMATERS:  \@file_content, reference to an array with file content
+    #      RETURNS:  \%hash, reference to anonymoushash with key=$name, value=@characters
+    #         TODO:  ????
+    #===============================================================================
 
     my ($array_ref)  = @_;
     my %hash         = ();
@@ -592,18 +601,19 @@ sub read_matrix {
 
     return \%hash;
 
-} # end of read_matrix
+}
 
 
-#===  FUNCTION  ================================================================
-#         NAME:  read_paup_block
-#      VERSION:  04/11/2007 18:40:38 PM CEST
-#  DESCRIPTION:  reads the paupblock
-#   PARAMATERS:  \@file_content, ref to file content
-#      RETURNS:  @paup_block
-#         TODO:  ????
-#===============================================================================
 sub read_paup_block {
+
+    #===  FUNCTION  ================================================================
+    #         NAME:  read_paup_block
+    #      VERSION:  04/11/2007 18:40:38 PM CEST
+    #  DESCRIPTION:  reads the paupblock
+    #   PARAMATERS:  \@file_content, ref to file content
+    #      RETURNS:  @paup_block
+    #         TODO:  ????
+    #===============================================================================
 
     my ($array_ref)      = @_;
     my @paup_block       = ();
@@ -633,16 +643,17 @@ sub read_paup_block {
 } # end of read_paup_block
 
 
-#===  FUNCTION  ================================================================
-#         NAME:  read_scores_and_print_R
-#      VERSION:  04/18/2007 12:40:44 AM CEST
-#  DESCRIPTION:  Prints a R file. Can be run in R using:
-#                R --no-save < source_me_in.R
-#   PARAMATERS:  $score_file_name
-#      RETURNS:  ????
-#         TODO:  ????
-#===============================================================================
 sub read_scores_and_print_R {
+
+    #===  FUNCTION  ================================================================
+    #         NAME:  read_scores_and_print_R
+    #      VERSION:  04/18/2007 12:40:44 AM CEST
+    #  DESCRIPTION:  Prints a R file. Can be run in R using:
+    #                R --no-save < source_me_in.R
+    #   PARAMATERS:  $score_file_name
+    #      RETURNS:  ????
+    #         TODO:  ????
+    #===============================================================================
 
     my (@args)          = @_;
     my $score_file_name = shift(@_);
