@@ -17,7 +17,6 @@ Getopt::Long::Configure("no_ignore_case");
 
 ## Globals
 my $SCRIPTNAME       = $0;
-my $CHANGES          = '04/18/2007 01:15:28 AM CEST';
 my $VERSION          = '0.1.0';
 my $VERBOSE          = q{};
 my $DEBUG            = 0;    # Set to 1 for debug printing
@@ -48,7 +47,7 @@ if (@ARGV < 1) {
 else {
     GetOptions(
         'help'      => sub { pod2usage(1); },
-        'version'   => sub { print STDOUT "\n  $SCRIPTNAME version $VERSION\n  Last changes $CHANGES\n\n"; exit(0) },
+        'version'   => sub { print STDOUT "$VERSION\n"; exit(0) },
         'man'       => sub { pod2usage(-exitstatus => 0, -verbose => 2); },
         'paup'      => \$paup,
         'nopaup'    => \$nopaup,
